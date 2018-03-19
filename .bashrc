@@ -14,7 +14,7 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="${RED}\u${MAGENTA}\033[33m\]\$(parse_git_branch)\[\033[00m\] ${BLUE}\W ${CYAN}:: ${RESET}"
+export PS1="${RED}\u${GREEN}\$(parse_git_branch) ${BLUE}\W ${CYAN}:: ${RESET}"
 
 
 [[ $- != *i* ]] && return
