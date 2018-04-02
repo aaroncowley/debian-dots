@@ -1,7 +1,6 @@
 set nocompatible   	" Disable vi-compatibility
 set t_Co=256        " Use 256 Colors in terminal
 " Put your non-Plugin stuff after this line
-set shell=/bin/zsh	" zsh is cooler than bash
 execute pathogen#infect()
 " Color Settings
 syntax on
@@ -10,6 +9,9 @@ set background=dark
 "colorscheme gruvbox
 set encoding=utf8
 
+
+
+let mapleader=','
 set tabstop=4                   " a tab is four spaces
 set smarttab
 set tags=tags
@@ -31,9 +33,12 @@ set nowrap
 "set timeout timeoutlen=200 ttimeoutlen=100
 
 " Group all swp files and backups into a dir
-set backupdir=~/.vim/backups
-set directory=~/.vim/backups
+set noswapfile
+set nobackup
+set nowritebackup
 
+nmap <C-n> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='n'
 
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
@@ -41,7 +46,17 @@ map <C-t> <esc>:tabnew<space>
 
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 nnoremap <leader>pd :pwd<cr>
-nnoremap rp :RainbowParenthesesToggle<cr>
+
+
+
+
+"clojure
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Filetype clojure nmap <c-c><c-k> :Require<cr>
+
 
 "add semicolon in normal mode
 nmap ;; A;<esc>

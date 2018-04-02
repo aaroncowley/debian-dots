@@ -10,7 +10,7 @@ set $mod Mod4
 
 #AUTOSTART STUFF
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
-exec_always --no-startup-id  python3 ~/.i3/i3-autoname-workspaces.py
+#exec_always --no-startup-id  python3 ~/.i3/i3-autoname-workspaces.py
 
 exec --no-startup-id compton -b
 exec --no-startup-id udiskie
@@ -27,8 +27,8 @@ exec --no-startup-id nm-applet
 #Font for window titles.
 font pango: Terminus 12
 #Colors
-set $back               #000000
-set $primary            #f22c40
+set $back               #000000 
+set $primary            #58d982
 set $secondary          #0FE0C9
 set $black              #282A2E
 set $grey               #303030
@@ -126,20 +126,20 @@ bindsym $mod+Shift+q kill
 bindsym $mod+w exec --no-startup-id rofi -show window
 bindsym $mod+d exec --no-startup-id rofi -show run
 #audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #audio player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 #brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec  --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
-bindsym $mod+Ctrl+Escape exec --no-startup-id bash ~/.i3/scripts/i3lockblur.sh
+bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock
 bindsym $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
 bindsym $mod+Shift+w exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/screenshots/'
 
@@ -224,6 +224,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+r mode "resize"
 
 bar {
+    i3bar_command i3bar -t
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     strip_workspace_numbers yes
     
@@ -232,7 +233,7 @@ bar {
     mode dock
     position top
     #height 24
-    font pango: Terminus 12
+    font pango: hack 12
     colors {
         background $back
         separator $primary
