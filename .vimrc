@@ -37,6 +37,8 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+" NERDTree stuff
+autocmd BufEnter * lcd %:p:h
 nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='n'
 
