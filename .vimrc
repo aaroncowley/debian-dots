@@ -1,12 +1,13 @@
 set nocompatible   	" Disable vi-compatibility
 set t_Co=256        " Use 256 Colors in terminal
+"set termguicolors
 " Put your non-Plugin stuff after this line
 execute pathogen#infect()
 " Color Settings
 syntax on
 filetype plugin indent on
 set background=dark
-"colorscheme gruvbox
+colorscheme monokai
 set encoding=utf8
 
 
@@ -59,6 +60,18 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Filetype clojure nmap <c-c><c-k> :Require<cr>
 
+
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 "add semicolon in normal mode
 nmap ;; A;<esc>

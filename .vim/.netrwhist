@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/s33r/.i3'
-let g:netrw_dirhist_2='/home/s33r/Documents'
-let g:netrw_dirhist_3='/home/s33r/.vim/autoload'
-let g:netrw_dirhist_4='/home/s33r/.vim/bundle'
-let g:netrw_dirhist_5='/home/s33r/.vim'
-let g:netrw_dirhist_6='/home/s33r/.i3/scripts'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/s33r/Projects/customer/src/clj/customer/db'

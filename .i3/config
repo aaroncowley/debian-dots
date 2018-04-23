@@ -27,7 +27,7 @@ exec --no-startup-id nm-applet
 #Font for window titles.
 font pango: Terminus 12
 #Colors
-set $back               #000000 
+set $back               #000000
 set $primary            #58d982
 set $secondary          #0FE0C9
 set $black              #282A2E
@@ -136,8 +136,8 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 #brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec  --no-startup-id xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 5 # decrease screen brightness
 
 bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock
 bindsym $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
@@ -224,7 +224,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+r mode "resize"
 
 bar {
-    i3bar_command i3bar -t
+    i3bar_command i3bar
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     strip_workspace_numbers yes
     
@@ -233,7 +233,7 @@ bar {
     mode dock
     position top
     #height 24
-    font pango: hack 12
+    font pango: ubuntu-mono 12
     colors {
         background $back
         separator $primary
