@@ -2,7 +2,7 @@ Xft.antialias: 1
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-Xft.dpi: 170
+Xft.dpi: 90
 
 ! URxvt
 
@@ -35,54 +35,46 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
 URxvt*buffered: false
-URxvt.font:xft:hack-11
-URxvt.boldFont:xft:hack-11
+URxvt.font:xft:xos4 terminus-11
+URxvt.boldFont:xft:xos4 terminus-11
 URxvt.letterSpace: 0
 
 urxvt*depth: 32
 ! special
 
-! special
-*.foreground:   #58d982
-*.background:   [80]#000000
-*.cursorColor:  #58d982
-
-! black
-*.color0:       #000000
-*.color8:       #686868
-
-! red
-*.color1:       #c91b00
-*.color9:       #ff6e67
-
-! green
-*.color2:       #00c200
-*.color10:      #5ffa68
-
-! yellow
-*.color3:       #c7c400
-*.color11:      #fffc67
-
-! blue
-*.color4:       #027fc7
-*.color12:      #6871ff
-
-! magenta
-*.color5:       #ca30c7
-*.color13:      #ff77ff
-
-! cyan
-*.color6:       #00c5c7
-*.color14:      #60fdff
-
-! white
-*.color7:       #c7c7c7
-*.color15:      #ffffff
-
+URxvt.background:               [90]#000000
+URxvt.foreground:               #dddddd
+URxvt.colorBD:                  #CFCFCF
+URxvt.colorUL:                  #969696
+URxvt.colorIT:                  #686868
+!Black
+*color0:                        #3D3D3D
+*color8:                        #4D4D4D 
+!Red
+*color1:                        #6673BF
+*color9:                        #899AFF 
+!Green
+*color2:                        #3EA290
+*color10:                       #52AD91
+!Yellow
+*color3:                        #B0EAD9
+*color11:                       #98C9BB
+!Blue
+*color4:                        #31658C
+*color12:                       #477AB3
+!Magenta
+*color5:                        #596196
+*color13:                       #7882BF
+!Cyan
+*color6:                        #8292B2
+*color14:                       #95A7CC
+!White
+*color7:                        #C8CACC
+*color15:                       #EDEFF2
 
 rofi.color-enabled:	true
 rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #58d982, #222, #008ed4, #ffffff
+rofi.color-normal:	#111, #dddddd, #222, #8292b2, #ffffff
 rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
 rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
 
@@ -92,4 +84,4 @@ rofi.bw:		0
 rofi.opacity:		"10"
 rofi.hide-scrollbar:	true
 rofi.width: 30
-rofi.font: Hack 40
+rofi.font: xos4 terminus 20

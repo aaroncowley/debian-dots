@@ -21,4 +21,6 @@ export PS1="${RED}\u${GREEN}\$(parse_git_branch) ${BLUE}\W ${CYAN}>>> ${RESET}"
 
 alias ls='ls --color=auto'
 alias r='ranger'
-
+alias n='ncmpcpp'
+alias v='vim'
+alias vi='vim'
