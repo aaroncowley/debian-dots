@@ -2,7 +2,7 @@ Xft.antialias: 1
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-Xft.dpi: 90
+Xft.dpi: 180
 
 ! URxvt
 
@@ -35,14 +35,14 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
 URxvt*buffered: false
-URxvt.font:xft:xos4 terminus-11
-URxvt.boldFont:xft:xos4 terminus-11
+URxvt.font:xft:ubuntu mono-11
+URxvt.boldFont:xft:ubuntu mono-11
 URxvt.letterSpace: 0
 
 urxvt*depth: 32
 ! special
 
-URxvt.background:               [90]#000000
+URxvt.background:               [50]#000000
 URxvt.foreground:               #dddddd
 URxvt.colorBD:                  #CFCFCF
 URxvt.colorUL:                  #969696

@@ -18,6 +18,10 @@ exec --no-startup-id pulseaudio
 exec --no-startup-id xrdb -merge /home/s33r/.Xresources
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
+
+
+exec --no-startup-id setxkbmap -option caps:ctrl_modifier
+
 #Launch Polybar where appropriate:
 #exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -55,49 +59,49 @@ for_window [class="^.*"] border pixel 1
 
 
 # i3-gaps stuff :)
-gaps inner 25
-gaps outer 0
-smart_borders on
-new_window none
+#gaps inner 25
+#gaps outer 0
+#smart_borders on
+#new_window none
 
-bindsym $mod+g exec ~/.i3/scripts/toggle_gaps.sh
+#bindsym $mod+g exec ~/.i3/scripts/toggle_gaps.sh
 #edit gaps mode
 #########################################################################
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#set $mode_gaps Gaps: (o) outer, (i) inner
+#set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#bindsym $mod+Shift+g mode "$mode_gaps"
+#mode "$mode_gaps" {
+#        bindsym o      mode "$mode_gaps_outer"
+#        bindsym i      mode "$mode_gaps_inner"
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
 
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+#mode "$mode_gaps_inner" {
+#        bindsym plus  gaps inner current plus 5
+#        bindsym minus gaps inner current minus 5
+#        bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+#        bindsym Shift+plus  gaps inner all plus 5
+#        bindsym Shift+minus gaps inner all minus 5
+#        bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#mode "$mode_gaps_outer" {
+#        bindsym plus  gaps outer current plus 5
+#        bindsym minus gaps outer current minus 5
+#        bindsym 0     gaps outer current set 0
+#
+#        bindsym Shift+plus  gaps outer all plus 5
+#        bindsym Shift+minus gaps outer all minus 5
+#        bindsym Shift+0     gaps outer all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
 ##########################################################################
 
 
@@ -118,14 +122,17 @@ for_window [title="Library"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [class="feh"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 bindsym $mod+e exec --no-startup-id emacs
-bindsym $mod+w exec --no-startup-id rofi -show window
-bindsym $mod+d exec --no-startup-id rofi -show run
-#audio controls
+#bindsym $mod+w exec --no-startup-id rofi -show window
+#bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu_run -b -nb black -sb '#8292b2'
+
+#audio control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -144,8 +151,12 @@ bindsym $mod+p exec --no-startup-id mpc toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 5 # decrease screen brightness
 
-bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock -i ~/Pictures/wallpaper.jpg
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
+#lockscreen
+bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock -i ~/Pictures/japan.png -t
+
+#screenshots
+#bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
+bindsym $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
 bindsym $mod+Shift+w exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/screenshots/'
 
 
@@ -235,7 +246,7 @@ bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     mode dock
     position top
-    font pango: xos4 Terminus 12 
+    font pango: Ubuntu Mono 24 
     #height 24
     colors {
         background $back

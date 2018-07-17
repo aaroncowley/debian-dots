@@ -14,7 +14,7 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="${RED}\u${GREEN}\$(parse_git_branch) ${BLUE}\W ${CYAN}>>> ${RESET}"
+export PS1="${RED}\u@\h${GREEN}\$(parse_git_branch) ${BLUE}\W ${RED}$ ${RESET}"
 
 
 [[ $- != *i* ]] && return
@@ -24,3 +24,9 @@ alias r='ranger'
 alias n='ncmpcpp'
 alias v='vim'
 alias vi='vim'
+alias i3conf='vim ~/.i3/config'
+alias i3blocksrc='vim ~/.i3/i3blocks.conf'
+alias bashrc='vim ~/.bashrc'
+alias vimrc='vim ~/.vimrc'
+alias fetch='screenfetch'
+alias irc='irssi'

@@ -56,11 +56,11 @@ nnoremap <leader>pd :pwd<cr>
 
 
 "clojure
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Filetype clojure nmap <c-c><c-k> :Require<cr>
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+"au Filetype clojure nmap <c-c><c-k> :Require<cr>
 """""""""""""""""""""""""""""""""""""""""""""""
 
 
