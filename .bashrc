@@ -19,14 +19,31 @@ export PS1="${RED}\u@\h${GREEN}\$(parse_git_branch) ${BLUE}\W ${RED}$ ${RESET}"
 
 [[ $- != *i* ]] && return
 
+export EDITOR=vim
+export PAGER=more
+
 alias ls='ls --color=auto'
 alias r='ranger'
 alias n='ncmpcpp'
-alias v='vim'
-alias vi='vim'
 alias i3conf='vim ~/.i3/config'
 alias i3blocksrc='vim ~/.i3/i3blocks.conf'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
-alias fetch='screenfetch'
+alias fetch='neofetch'
 alias irc='irssi'
+alias netmon='sudo watch -n .1 "sudo netstat -tulpna"'
+alias top='htop'
+alias ipmon='watch -n .1 "ip a"'
+
+alias v='vim'
+alias vi='vim'
+alias svi='sudo vim'
+alias vit='vim -p'
+
+alias poweroff='systemctl poweroff'
+alias reboot='systemctl reboot'
+alias restart='sudo systemctl restart'
+alias suspend='systemctl suspend'
+alias update='sudo apt update && sudo apt upgrade'
+alias install='sudo apt install'
+alias sources='sudo vim /etc/apt/sources.list'

@@ -1,20 +1,9 @@
-##########################################################################
-##########################################################################
-##########################################################################
-# _  _____   _____              __ 
-#(_)|____ | /  __ \            / _|
-# _     / / | /  \/ ___  _ __ | |_ 
-#| |    \ \ | |    / _ \| '_ \|  _|
-#| |.___/ / | \__/\ (_) | | | | |  
-#|_|\____/   \____/\___/|_| |_|_|  
+#To do list
+#fix up bar
 #
-#by Aaron Cowley
-##########################################################################
-##########################################################################
-##########################################################################
+# See http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
 
 #default keyboard repeat is too slow for me
 #exec xset r rate 175 25
@@ -28,6 +17,9 @@ exec --no-startup-id udiskie
 exec --no-startup-id pulseaudio
 exec --no-startup-id xrdb -merge /home/s33r/.Xresources
 exec --no-startup-id emacs --daemon
+#exec --no-startup-id nm-applet
+#exec --no-startup-id redshift-gtk
+
 
 exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 
@@ -40,8 +32,8 @@ exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 #Font for window titles.
 font pango: Terminus 12
 #Colors
-set $back               #000000
-set $primary            #4d4d4d
+set $back               #1b1918
+set $primary            #407ee7
 set $secondary          #0FE0C9
 set $black              #282A2E
 set $grey               #303030
@@ -63,7 +55,56 @@ bindsym $mod+Return exec --no-startup-id urxvt
 mouse_warping none
 
 for_window [class="^.*"] border pixel 1
-hide_edge_borders smart
+
+
+
+
+# i3-gaps stuff :)
+#gaps inner 25
+#gaps outer 0
+#smart_borders on
+#new_window none
+
+#bindsym $mod+g exec ~/.i3/scripts/toggle_gaps.sh
+#edit gaps mode
+#########################################################################
+#set $mode_gaps Gaps: (o) outer, (i) inner
+#set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#bindsym $mod+Shift+g mode "$mode_gaps"
+#mode "$mode_gaps" {
+#        bindsym o      mode "$mode_gaps_outer"
+#        bindsym i      mode "$mode_gaps_inner"
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+
+#mode "$mode_gaps_inner" {
+#        bindsym plus  gaps inner current plus 5
+#        bindsym minus gaps inner current minus 5
+#        bindsym 0     gaps inner current set 0
+
+#        bindsym Shift+plus  gaps inner all plus 5
+#        bindsym Shift+minus gaps inner all minus 5
+#        bindsym Shift+0     gaps inner all set 0
+
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#mode "$mode_gaps_outer" {
+#        bindsym plus  gaps outer current plus 5
+#        bindsym minus gaps outer current minus 5
+#        bindsym 0     gaps outer current set 0
+#
+#        bindsym Shift+plus  gaps outer all plus 5
+#        bindsym Shift+minus gaps outer all minus 5
+#        bindsym Shift+0     gaps outer all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+##########################################################################
+
 
 
 ##########################################################################
@@ -150,11 +191,15 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+
 #shrink or grow windows
 bindsym $mod+Shift+y        resize shrink width 2 px or 2 ppt
 bindsym $mod+Shift+u		resize shrink height 2 px or 2 ppt
 bindsym $mod+Shift+i		resize grow height 2 px or 2 ppt
 bindsym $mod+Shift+o        resize grow width 2 px or 2 ppt
+
+
+
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -176,7 +221,7 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 
-bindsym $mod+Tab workspace next
+bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -189,12 +234,12 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 
-bindsym $mod+Shift+Tab move container to workspace next
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+
 
 bindsym $mod+r mode "resize"
 
@@ -203,7 +248,7 @@ bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     mode dock
     position top
-    font pango: DejaVu Sans Mono 8
+    font pango: DejaVu Sans Mono 12 
     #height 24
     colors {
         background $back
@@ -215,3 +260,5 @@ bar {
         urgent_workspace #CC241D #CC241D #EBDBB2
     }
 }
+
+# vim:filetype=i3

@@ -1,8 +1,12 @@
 (menu-bar-mode -1) 
 (toggle-scroll-bar -1)
-(tool-bar-mode -1) 
+(tool-bar-mode -1)
+(global-linum-mode t)
 
+(add-to-list 'load-path "~/.emacs.d/lisp/cider-0.17.0")
 
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;; orgmode stuff
 (require 'org)
@@ -19,7 +23,7 @@
         ("org" . "http://orgmode.org/elpa/")
         ("melpa-stable" . "http://stable.melpa.org/packages/")))
 (package-initialize)
-;(package-install 'bind-key)
+;;;(package-refresh-contents) ;;use if getting use-package errors
 (package-install 'use-package)
 
 (eval-when-compile
@@ -55,8 +59,8 @@
 ;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE SETUP ;;
 ;;;;;;;;;;;;;;;;;;;
-(use-package cider-hydra
-  :ensure t)
+;; (use-package cider-hydra
+;;   :ensure t)
 
 (use-package clojure-mode
   :ensure t
@@ -287,10 +291,7 @@ _._ Scroll→
   (global-set-key "\C-xg" 'magit-status)
   (setq magit-diff-use-overlays nil))
 
-(use-package company-quickhelp
-  :ensure pos-tip
-  :config
-  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
 
 (use-package smartparens-config
   :ensure smartparens
@@ -364,7 +365,7 @@ _._ Scroll→
   (yas-global-mode))
 
 (use-package cider
-  :ensure t
+  ;:ensure t
   :config
   (setq cider-repl-use-clojure-font-lock t
         cider-font-lock-dynamically '(macro core function var))
@@ -400,10 +401,10 @@ _._ Scroll→
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (gruvbox-dark-hard)))
+ '(custom-enabled-themes (quote (darcula)))
  '(custom-safe-themes
    (quote
-    ("021720af46e6e78e2be7875b2b5b05344f4e21fad70d17af7acfd6922386b61e" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6ee6f99dc6219b65f67e04149c79ea316ca4bcd769a9e904030d38908fd7ccf9" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "42b9d85321f5a152a6aef0cc8173e701f572175d6711361955ecfb4943fe93af" default)))
+    ("cd4d1a0656fee24dc062b997f54d6f9b7da8f6dc8053ac858f15820f9a04a679" "7d2e7a9a7944fbde74be3e133fc607f59fdbbab798d13bd7a05e38d35ce0db8d" "c856158cc996d52e2f48190b02f6b6f26b7a9abd5fea0c6ffca6740a1003b333" "ef98b560dcbd6af86fbe7fd15d56454f3e6046a3a0abd25314cfaaefd3744a9e" "a5956ec25b719bf325e847864e16578c61d8af3e8a3d95f60f9040d02497e408" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "8eafb06bf98f69bfb86f0bfcbe773b44b465d234d4b95ed7fa882c99d365ebfd" "62c81ae32320ceff5228edceeaa6895c029cc8f43c8c98a023f91b5b339d633f" "f27c3fcfb19bf38892bc6e72d0046af7a1ded81f54435f9d4d09b3bff9c52fc1" "1d0ee3d14476f29dc12e3ed9803c4a634ed8f375d2b160e7eae24fe71c324083" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "021720af46e6e78e2be7875b2b5b05344f4e21fad70d17af7acfd6922386b61e" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6ee6f99dc6219b65f67e04149c79ea316ca4bcd769a9e904030d38908fd7ccf9" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "42b9d85321f5a152a6aef0cc8173e701f572175d6711361955ecfb4943fe93af" default)))
  '(fci-rule-color "#424748")
  '(highlight-changes-colors (quote ("#ff8eff" "#ab7eff")))
  '(highlight-symbol-colors
@@ -433,9 +434,12 @@ _._ Scroll→
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(org-agenda-files
+   (quote
+    ("/Users/s33r/org/work.org" "/Users/s33r/org/todo.org")))
  '(package-selected-packages
    (quote
-    (solarized-theme darkokai-theme gruvbox-theme helm-company company-quickhelp which-key undo-tree clojure-snippets yasnippet spacemacs-theme rainbow-identifiers rainbow-delimiters rainbow-mode helm-projectile projectile smartparens pos-tip magit ivy helm dired-narrow dired-subtree dired-filter company cider-hydra use-package)))
+    (darcula-theme color-theme-solarized color-theme-zenburn color-theme-molokai color-theme-monokai ubuntu-theme night-owl-theme solarized-theme darkokai-theme gruvbox-theme helm-company company-quickhelp which-key undo-tree clojure-snippets yasnippet spacemacs-theme rainbow-identifiers rainbow-delimiters rainbow-mode helm-projectile projectile smartparens pos-tip magit ivy helm dired-narrow dired-subtree dired-filter company use-package)))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -476,3 +480,5 @@ _._ Scroll→
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+

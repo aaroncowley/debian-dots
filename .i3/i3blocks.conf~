@@ -1,7 +1,7 @@
 command=/home/s33r/.i3/scripts/i3blocks/$BLOCK_NAME
 separator=false
 full_text=|
-color=#FF6E67
+color=#42f4aa
 separator_block_width=3
 
 
@@ -21,7 +21,7 @@ label=VOL
 instance=Master
 #instance=PCM
 interval=1
-color=#f8f8f2
+color=#aaaaaa
 signal=10
 
 [separator]
@@ -30,7 +30,7 @@ signal=10
 label=MEM
 separator=false
 interval=1
-color=#f8f8f2
+color=#aaaaaa
 
 [separator]
 
@@ -38,7 +38,7 @@ color=#f8f8f2
 command=~/.i3/scripts/i3blocks/temperature
 label=TEMP
 interval=10
-color=#f8f8f2
+color=#aaaaaa
 
 [separator]
 
@@ -46,7 +46,7 @@ color=#f8f8f2
 label=
 command=date '+%D'
 interval=30
-color=#f8f8f2
+color=#aaaaaa
 
 [separator]
 
@@ -54,14 +54,14 @@ color=#f8f8f2
 label=
 command=date '+%I:%M'
 interval=30
-color=#f8f8f2
+color=#aaaaaa
 
 [separator]
 
 #[battery]
 #command=~/.i3/scripts/i3blocks/battery
 #label=BAT
-#color=#f8f8f2
+#color=#aaaaaa
 #interval=1
 
 #[separator]
