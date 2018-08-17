@@ -34,6 +34,8 @@ alias irc='irssi'
 alias netmon='sudo watch -n .1 "sudo netstat -tulpna"'
 alias top='htop'
 alias ipmon='watch -n .1 "ip a"'
+alias mnt='udiskie-mount'
+alias umnt='udiskie-umount'
 
 alias v='vim'
 alias vi='vim'
