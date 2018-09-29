@@ -38,6 +38,7 @@ alias mnt='udiskie-mount'
 alias umnt='udiskie-umount'
 alias z='zathura'
 
+
 alias v='vim'
 alias vi='vim'
 alias svi='sudo vim'
