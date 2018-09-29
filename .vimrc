@@ -26,7 +26,6 @@ set number                      " always show line numbers
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
 set noerrorbells                " don't beep
-set relativenumber              " show line numbers relative to cursor position
 set splitbelow                  " create split below when doing horizontal split
 set splitright                  " create split on right when doing a vertical split
 set incsearch
