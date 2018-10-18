@@ -6,6 +6,7 @@ git
 htop
 i3
 i3blocks
+neofetch
 network-manager
 python3-pip
 ranger
