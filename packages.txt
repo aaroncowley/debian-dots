@@ -10,7 +10,7 @@ neofetch
 network-manager
 python3-pip
 ranger
-rxvt-unicode
+rxvt-unicode-256color
 ttf-dejavu
 udiskie
 vim-gtk
