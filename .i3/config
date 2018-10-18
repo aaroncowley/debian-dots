@@ -37,7 +37,6 @@ exec --no-startup-id compton -b
 exec --no-startup-id udiskie
 exec --no-startup-id pulseaudio
 exec --no-startup-id xrdb -merge /home/s33r/.Xresources
-exec --no-startup-id emacs --daemon
 
 #set caps lock to ctrl
 exec --no-startup-id setxkbmap -option caps:ctrl_modifier
@@ -94,8 +93,6 @@ for_window [class="feh"] floating enable
 bindsym $mod+Shift+q kill
 
 bindsym $mod+c exec --no-startup-id chromium
-bindsym $mod+e exec --no-startup-id emacsclient -create-frame --alternate-editor=""
-#bindsym $mod+shift+e exec --no-startup-id emacs --daemon
 #bindsym $mod+w exec --no-startup-id rofi -show window
 #bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+d exec --no-startup-id dmenu_run -b -nf '#dddddd' -nb '$back' -sb '$primary'
