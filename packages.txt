@@ -213,6 +213,7 @@ tasksel
 tasksel-data
 telnet
 traceroute
+ttf-dejavu
 tzdata
 ucf
 udev
