@@ -14,8 +14,7 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="${RED}\u@\h${GREEN}\$(parse_git_branch) ${BLUE}\W ${RED}$ ${RESET}"
-
+export PS1="${RED}\u@\h${GREEN}\$(parse_git_branch) ${BLUE}\W ${RED}✞ ${RESET}"
 
 [[ $- != *i* ]] && return
 
@@ -33,11 +32,9 @@ alias fetch='neofetch'
 alias irc='irssi'
 alias netmon='sudo watch -n .1 "sudo netstat -tulpna"'
 alias top='htop'
-alias ipmon='watch -n .1 "ip -br addr"'
+alias ipmon='watch -n .1 "ip -br a"'
 alias mnt='udiskie-mount'
 alias umnt='udiskie-umount'
-alias z='zathura'
-
 
 alias v='vim'
 alias vi='vim'
@@ -51,5 +48,8 @@ alias suspend='systemctl suspend'
 alias update='sudo apt update && sudo apt upgrade'
 alias install='sudo apt install'
 alias sources='sudo vim /etc/apt/sources.list'
+alias ctc='~/.i3/scripts/capstoctrl.sh'
 alias ida='~/idafree-7.0/ida64'
-alias gpvpn='sudo /home/s33r/openconnect/openconnect --protocol=gp gpvpn.csrl.byu.edu --dump -vvv'
+alias c='nmtui'
+alias desk='~/.screenlayout/desk.sh && xrdb ~/.Xresources_desk'
+alias crusader='ssh -p 9001 s33r@w1zardt0w3r.hopto.org'

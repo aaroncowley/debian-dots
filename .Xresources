@@ -42,72 +42,65 @@ URxvt.letterSpace: 0
 urxvt*depth: 32
 ! special
 
-URxvt.background:               [80]#1b1918
-URxvt.foreground:               #dddddd
-!URxvt.foreground:               #42f4aa
-URxvt.colorBD:                  #CFCFCF
-URxvt.colorUL:                  #969696
-URxvt.colorIT:                  #686868
-!Black
-!*color0:                        #3D3D3D
-!*color8:                        #4D4D4D 
-!Red
-!*color1:                        #6673BF
-!*color9:                        #899AFF 
-!Green
-!*color2:                        #3EA290
-!*color10:                       #52AD91
-!Yellow
-!*color3:                        #B0EAD9
-!*color11:                       #98C9BB
-!Blue
-!*color4:                        #31658C
-!*color12:                       #477AB3
-!Magenta
-!*color5:                        #596196
-!*color13:                       #7882BF
-!Cyan
-!*color6:                        #8292B2
-!*color14:                       #95A7CC
-!White
-!*color7:                        #C8CACC
-!*color15:                       #EDEFF2
+! Colors definition {{{
+#define   plain            #f8f6f2
+#define   snow             #ffffff
+#define   coal             #000000
 
-!! black
-*color0: #1b1918
-*color8: #766e6b
-!! red
-*color1: #f22c40
-*color9: #f22c40
-!! green
-*color2: #5ab738
-*color10: #5ab738
-!! yellow
-*color3: #d5911a
-*color11: #d5911a
-!! blue
-*color4: #407ee7
-*color12: #407ee7
-!! magenta
-*color5: #6666ea
-*color13: #6666ea
-!! cyan
-*color6: #00ad9c
-*color14: #00ad9c
-!! white
-*color7: #a8a19f
-*color15: #f1efee
+#define   brightgravel     #d9cec3
+#define   lightgravel      #998f84
+#define   gravel           #857f78
+#define   mediumgravel     #666462
+#define   deepgravel       #45413b
+#define   deepergravel     #35322d
+#define   darkgravel       #242321
+#define   blackgravel      #1c1b1a
+#define   blackestgravel   #141413
 
-rofi.color-enabled:	true
-rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #dddddd, #222, #8292b2, #ffffff
-rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
+#define   dalespale        #fade3e
+#define   dirtyblonde      #f4cf86
+#define   taffy            #ff1d00
+#define   saltwatertaffy   #8cffba
+#define   tardis           #0a9dff
+#define   orange           #ffa724
+#define   lime             #aeee00
+#define   dress            #ff9eb8
+#define   toffee           #b88853
+#define   coffee           #c7915b
+#define   darkroast        #88633f
+! }}}
 
-rofi.fake-transparency:	false
-rofi.lines:		3
-rofi.bw:		0
-rofi.opacity:		"10"
-rofi.hide-scrollbar:	true
-rofi.width: 30
-rofi.font: xos4 terminus 20
+
+! Resourses {{{
+*background:  blackestgravel
+*foreground:  plain
+*cursorColor: lime
+*scrollColor: deepgravel
+*fadeColor:   snow
+*fading:      20
+
+!        black
+*color0:      blackestgravel
+*color8:      coal
+!        red
+*color1:      taffy
+*color9:      taffy
+!        green
+*color2:      lime
+*color10:     lime
+!        yellow
+*color3:      dalespale
+*color11:     orange
+!        blue
+*color4:      tardis
+*color12:     tardis
+!        magenta
+*color5:      dress
+*color13:     dress
+!        cyan
+*color6:      saltwatertaffy
+*color14:     saltwatertaffy
+!        white
+*color7:      brightgravel
+*color15:     snow
+! }}}
