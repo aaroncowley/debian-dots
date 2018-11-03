@@ -2,7 +2,7 @@ Xft.antialias: 1
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-Xft.dpi: 96
+Xft.dpi: 180
 
 ! URxvt
 
@@ -39,10 +39,7 @@ URxvt.font:xft:DejaVu Sans Mono-10
 URxvt.boldFont:xft:DejaVu Sans Mono-10
 URxvt.letterSpace: 0
 
-urxvt*depth: 32
-! special
 
-! Colors definition {{{
 #define   plain            #f8f6f2
 #define   snow             #ffffff
 #define   coal             #000000
@@ -68,16 +65,12 @@ urxvt*depth: 32
 #define   toffee           #b88853
 #define   coffee           #c7915b
 #define   darkroast        #88633f
-! }}}
 
 
-! Resourses {{{
-*background:  blackestgravel
-*foreground:  plain
-*cursorColor: lime
-*scrollColor: deepgravel
-*fadeColor:   snow
-*fading:      20
+urxvt*depth: 32
+urxvt*background:  [90]#141413
+urxvt*foreground:  plain
+urxvt*cursorColor: lime
 
 !        black
 *color0:      blackestgravel
@@ -103,4 +96,3 @@ urxvt*depth: 32
 !        white
 *color7:      brightgravel
 *color15:     snow
-! }}}
