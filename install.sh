@@ -15,7 +15,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 cp -R .vim/ ..
 cp -R .i3/ ..
-cp .vimrc
+cp .vimrc ..
 cp .tmux.conf ..
 cp .Xresources ..
 cp .zprofile ..
