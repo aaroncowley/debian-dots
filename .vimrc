@@ -1,13 +1,13 @@
 set nocompatible   	" Disable vi-compatibility
 set t_Co=256        " Use 256 Colors in terminal
-"set termguicolors
 " Put your non-Plugin stuff after this line
-"execute pathogen#infect()
+execute pathogen#infect()
 " Color Settings
 syntax on
 filetype plugin indent on
 set background=dark
-"colorscheme monokai
+" set Vim-specific sequences for RGB colors
+colorscheme gruvbox
 set encoding=utf8
 
 
@@ -23,6 +23,7 @@ set shiftround                  " use multiple of shiftwidth when indenting with
 set autoindent                  " always set autoindenting on
 set copyindent                  " copy the previous indentation on autoindenting
 set number                      " always show line numbers
+set relativenumber              " current line position shows relative distance to other lines
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
 set noerrorbells                " don't beep
@@ -51,18 +52,29 @@ map <C-t> <esc>:tabnew<space>
 noremap <C-w> <esc>:saveas<space> 
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 nnoremap <leader>pd :pwd<cr>
-inoremap <C-l> <Space><Space>
 """"""""""""""""""""""""""""""""""""""""
-"""HARD MODE""""""""""""""""""""
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-""""""""""""""""""""""""""""""""
+
+
+"clojure
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+"au Filetype clojure nmap <c-c><c-k> :Require<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+""""""""""""""""""""""""""""""""""
 
 
 "add semicolon in normal mode
@@ -96,3 +108,23 @@ if &term =~ '^screen'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
+
+
+
+inoremap <C-l> <Space><Space>
+
+
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_format_strings = 1
+
+

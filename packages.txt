@@ -3,6 +3,7 @@ curl
 feh
 gdb
 git
+golang
 htop
 i3
 i3blocks
@@ -19,3 +20,4 @@ vlc
 xinit
 xorg
 xxd
+zsh

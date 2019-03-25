@@ -1,48 +1,52 @@
 ##########################################################################
 ##########################################################################
 ##########################################################################
-# _  _____   _____              __ 
-#(_)|____ | /  __ \            / _|
-# _     / / | /  \/ ___  _ __ | |_ 
-#| |    \ \ | |    / _ \| '_ \|  _|
-#| |.___/ / | \__/\ (_) | | | | |  
-#|_|\____/   \____/\___/|_| |_|_|  
 #
-#by Aaron Cowley
+#                                  _,met$$$$$gg.
+#                               ,g$$$$$$$$$$$$$$$P.
+#                            ,g$$P""       """Y$$.".
+#                            ,$$P'              `$$$. 
+#                          ',$$P       ,ggs.     `$$b:
+#                          `d$$'     ,$P"'   .    $$$
+#                           $$P      d$'     ,    $$P
+#                           $$:      $$.   -    ,d$$'
+#                           $$;      Y$b._   _,d$P'
+#                           Y$$.    `.`"Y$$$$P"' 
+#                           `$$b      "-.__
+#                            `Y$$b
+#                             `Y$$.
+#                               `$$b.
+#                                 `Y$$b.
+#                                   `"Y$b._
+#                                       `""""
+#
 ##########################################################################
 ##########################################################################
 ##########################################################################
 
+#super key is mod
 set $mod Mod4
 
+##########################AUTOSTART STUFF################################
 
-#default keyboard repeat is too slow for me
-#exec xset r rate 175 25
-
-#AUTOSTART STUFF
+#wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
-#exec_always --no-startup-id  python3 ~/.i3/i3-autoname-workspaces.py
 
+#startup programs
 exec --no-startup-id compton -b
 exec --no-startup-id udiskie
-#exec --no-startup-id pulseaudio
 exec --no-startup-id xrdb -merge /home/s33r/.Xresources
-#exec --no-startup-id emacs --daemon
 
+#set caps lock to ctrl
 exec --no-startup-id setxkbmap -option caps:ctrl_modifier
-bindsym $mod+Shift+e exec "setxkbmap -option caps:ctrl_modifier"
-#Launch Polybar where appropriate:
-#exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-
-
 
 #Font for window titles.
 font pango: Terminus 12
-#Colors
-set $back               #000000
-set $primary            #4d4d4d
-set $secondary          #0FE0C9
+
+#Colors - Change Scheme here
+set $back               #282828
+set $primary            #689d6a
+set $secondary          #d79921
 set $black              #282A2E
 set $grey               #303030
 set $white              #C5C8C6
@@ -87,13 +91,13 @@ for_window [class="feh"] floating enable
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id dmenu_run -b -nf '#dddddd' -nb '$back' -sb '$primary'
 
 #audio control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+ 
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%- 
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 #audio player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -113,15 +117,12 @@ bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 5 # decrease screen
 bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock -i ~/Pictures/wallpaper.png -t
 
 #screenshots
-#bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
 bindsym $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
 bindsym $mod+Shift+w exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/screenshots/'
 
-#multimon
-bindsym $mod+Shift+x exec ~/laptop.sh 
-bindsym $mod+Shift+m exec ~/desk.sh
 
 
+########################################################################
 # vi keybindings
 set $vi_left h
 set $vi_down j
@@ -150,10 +151,10 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 #shrink or grow windows
-bindsym $mod+Shift+o        resize shrink width 2 px or 2 ppt
-bindsym $mod+Shift+i		resize shrink height 2 px or 2 ppt
-bindsym $mod+Shift+u		resize grow height 2 px or 2 ppt
-bindsym $mod+Shift+y        resize grow width 2 px or 2 ppt
+bindsym $mod+Shift+y        resize shrink width 2 px or 2 ppt
+bindsym $mod+Shift+u		resize shrink height 2 px or 2 ppt
+bindsym $mod+Shift+i		resize grow height 2 px or 2 ppt
+bindsym $mod+Shift+o        resize grow width 2 px or 2 ppt
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -190,6 +191,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 
 bindsym $mod+Shift+Tab move container to workspace next
 
+###################################################################
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -197,13 +199,13 @@ bindsym $mod+Shift+r restart
 
 bindsym $mod+r mode "resize"
 
+#pick a bar
 bar {
     #status_command i3status
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     mode dock
     position top
     font pango: DejaVu Sans Mono 8
-    #height 24
     colors {
         background $back
         separator $primary

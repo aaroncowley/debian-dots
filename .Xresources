@@ -2,7 +2,7 @@ Xft.antialias: 1
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-Xft.dpi: 180
+Xft.dpi: 96
 
 ! URxvt
 
@@ -35,64 +35,36 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
 URxvt*buffered: false
-URxvt.font:xft:DejaVu Sans Mono-10
-URxvt.boldFont:xft:DejaVu Sans Mono-10
+URxvt*font: xft:Source Code Pro for Powerline:size=11
+URxvt.boldFont: xft:Source Code Pro for Powerline:size=11
 URxvt.letterSpace: 0
 
-
-#define   plain            #f8f6f2
-#define   snow             #ffffff
-#define   coal             #000000
-
-#define   brightgravel     #d9cec3
-#define   lightgravel      #998f84
-#define   gravel           #857f78
-#define   mediumgravel     #666462
-#define   deepgravel       #45413b
-#define   deepergravel     #35322d
-#define   darkgravel       #242321
-#define   blackgravel      #1c1b1a
-#define   blackestgravel   #141413
-
-#define   dalespale        #fade3e
-#define   dirtyblonde      #f4cf86
-#define   taffy            #ff1d00
-#define   saltwatertaffy   #8cffba
-#define   tardis           #0a9dff
-#define   orange           #ffa724
-#define   lime             #aeee00
-#define   dress            #ff9eb8
-#define   toffee           #b88853
-#define   coffee           #c7915b
-#define   darkroast        #88633f
-
-
 urxvt*depth: 32
-urxvt*background:  [90]#141413
-urxvt*foreground:  plain
-urxvt*cursorColor: lime
-
-!        black
-*color0:      blackestgravel
-*color8:      coal
-!        red
-*color1:      taffy
-*color9:      taffy
-!        green
-*color2:      lime
-*color10:     lime
-!        yellow
-*color3:      dalespale
-*color11:     orange
-!        blue
-*color4:      tardis
-*color12:     tardis
-!        magenta
-*color5:      dress
-*color13:     dress
-!        cyan
-*color6:      saltwatertaffy
-*color14:     saltwatertaffy
-!        white
-*color7:      brightgravel
-*color15:     snow
+! hard contrast: *background: #1d2021
+urxvt*background: [90]#282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
