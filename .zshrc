@@ -100,7 +100,7 @@ export EDITOR=vim
 export PAGER=more
 
 alias ls='ls --color=auto'
-alias r='ranger'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias n='ncmpcpp'
 alias i3conf='vim ~/.i3/config'
 alias i3blocksrc='vim ~/.i3/i3blocks.conf'
