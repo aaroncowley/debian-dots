@@ -7,7 +7,7 @@ syntax on
 filetype plugin indent on
 set background=dark
 " set Vim-specific sequences for RGB colors
-colorscheme gruvbox
+colorscheme molokai
 set encoding=utf8
 
 
@@ -30,7 +30,7 @@ set noerrorbells                " don't beep
 set splitbelow                  " create split below when doing horizontal split
 set splitright                  " create split on right when doing a vertical split
 set incsearch
-set nowrap
+"set nowrap
 "set timeout timeoutlen=200 ttimeoutlen=100
 
 " Group all swp files and backups into a dir
@@ -114,6 +114,8 @@ endif
 inoremap <C-l> <Space><Space>
 
 
+let g:ycm_autoclose_preview_window_after_completion=1
+
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_functions = 1
@@ -127,4 +129,4 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_format_strings = 1
 
-
+let python_highlight_all = 1

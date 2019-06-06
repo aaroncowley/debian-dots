@@ -44,9 +44,9 @@ exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 font pango: Terminus 12
 
 #Colors - Change Scheme here
-set $back               #282828
-set $primary            #689d6a
-set $secondary          #d79921
+set $back               #1b1d1e
+set $primary            #ff0044
+set $secondary          #266c98
 set $black              #282A2E
 set $grey               #303030
 set $white              #C5C8C6
@@ -130,10 +130,10 @@ set $vi_up k
 set $vi_right l
 
 # change focus
-bindsym $mod+$vi_left focus left
-bindsym $mod+$vi_down focus down
-bindsym $mod+$vi_up focus up
-bindsym $mod+$vi_right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+$vi_left move left
