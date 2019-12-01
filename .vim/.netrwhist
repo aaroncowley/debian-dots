@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/etc/apt/apt.conf.d'
-let g:netrw_dirhist_2='/etc/apt/preferences.d'
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/s33r/.vim/bundle'
+let g:netrw_dirhist_1='/home/s33r/.vim/bundle/python-syntax'

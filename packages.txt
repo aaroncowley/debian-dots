@@ -1,3 +1,4 @@
+arc-theme
 compton
 curl
 feh

@@ -35,36 +35,38 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
 URxvt*buffered: false
-URxvt*font: xft:Source Code Pro for Powerline:size=11
-URxvt.boldFont: xft:Source Code Pro for Powerline:size=11
+URxvt*font: xft:Terminess Powerline:size=11
+URxvt.boldFont: xft:Terminess Powerline:size=11
 URxvt.letterSpace: 0
 
 urxvt*depth: 32
-! hard contrast: *background: #1d2021
-urxvt*background: [90]#282828
-! soft contrast: *background: #32302f
-*foreground: #ebdbb2
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
+! terminal colours 
+URxvt.background:               [90]#1b1b1b
+URxvt.foreground:               #FFFFFF
+URxvt.colorBD:                  #CFCFCF
+URxvt.colorUL:                  #969696
+URxvt.colorIT:                  #686868
+!Black
+*color0:                        #3D3D3D
+*color8:                        #4D4D4D 
+!Red
+*color1:                        #6673BF
+*color9:                        #899AFF 
+!Green
+*color2:                        #3EA290
+*color10:                       #52AD91
+!Yellow
+*color3:                        #B0EAD9
+*color11:                       #98C9BB
+!Blue
+*color4:                        #31658C
+*color12:                       #477AB3
+!Magenta
+*color5:                        #596196
+*color13:                       #7882BF
+!Cyan
+*color6:                        #8292B2
+*color14:                       #95A7CC
+!White
+*color7:                        #C8CACC
+*color15:                       #EDEFF2 

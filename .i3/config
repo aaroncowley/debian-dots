@@ -44,8 +44,8 @@ exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 font pango: Terminus 12
 
 #Colors - Change Scheme here
-set $back               #1b1d1e
-set $primary            #ff0044
+set $back               #1b1b1b
+set $primary            #8292b2
 set $secondary          #266c98
 set $black              #282A2E
 set $grey               #303030
@@ -75,6 +75,7 @@ hide_edge_borders smart
 #custom app commands (?i) just means case insenitive..
 #for_window [class="(?i)feh"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable
+for_window [class="(?i)steam"] floating enable
 for_window [class="(?i)qemu-system-x86_64"] floating enable
 #for_window [class="VirtualBox"] floating enable
 #for_window [window_role="pop-up"] floating enable
@@ -92,7 +93,9 @@ for_window [class="feh"] floating enable
 bindsym $mod+Shift+q kill
 
 bindsym $mod+c exec --no-startup-id chromium
-bindsym $mod+d exec --no-startup-id dmenu_run -b -nf '#dddddd' -nb '$back' -sb '$primary'
+#bindsym $mod+d exec --no-startup-id dmenu_run -b -nf '#dddddd' -nb '$back' -sb '$primary'
+bindsym $mod+d exec --no-startup-id rofi -show run
+
 
 #audio control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+ 
@@ -115,6 +118,7 @@ bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 5 # decrease screen
 
 #lockscreen
 bindsym $mod+Ctrl+Escape exec --no-startup-id i3lock -i ~/Pictures/wallpaper.png -t
+bindsym $mod+Ctrl+s exec --no-startup-id i3lock -i ~/Pictures/wallpaper.png -t && systemctl suspend
 
 #screenshots
 bindsym $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/'
@@ -130,10 +134,10 @@ set $vi_up k
 set $vi_right l
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+$vi_left focus left
+bindsym $mod+$vi_down focus down
+bindsym $mod+$vi_up focus up
+bindsym $mod+$vi_right focus right
 
 # move focused window
 bindsym $mod+Shift+$vi_left move left
@@ -205,7 +209,7 @@ bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf 2> ~/.i3/.i3blocks.err
     mode dock
     position top
-    font pango: DejaVu Sans Mono 8
+    font pango: Terminess Powerline 12
     colors {
         background $back
         separator $primary
