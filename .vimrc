@@ -18,13 +18,20 @@ set encoding=utf8
 
 " VIM PLUG """""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+
+" programming and general
 Plug 'https://github.com/fatih/vim-go.git'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'https://github.com/JamshedVesuna/vim-markdown-preview.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/preservim/nerdtree.git'
+Plug 'https://github.com/kaicataldo/material.vim.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
+
+" Latex
+Plug 'lervag/vimtex'
+" 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""
 " Put your non-Plugin stuff after this line
@@ -73,9 +80,11 @@ inoremap jj <ESC>
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 map <C-t> <esc>:tabnew<space>
-noremap <C-w> <esc>:saveas<space> 
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 nnoremap <leader>pd :pwd<cr>
+
+" Latex
+nnoremap <C-p> :VimtexCompile<cr>
 """"""""""""""""""""""""""""""""""""""""
 
 
@@ -157,3 +166,9 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_format_strings = 1
 
 let g:python_highlight_all = 1
+
+""""" LATEX 
+let g:polyglot_disabled = ['latex']
+let g:tex_flavor = "latex"
+let g:vimtex_compiler_engine = "luatex"
+"""""""""""

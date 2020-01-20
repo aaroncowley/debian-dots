@@ -152,6 +152,7 @@
       <property name="&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
       <property name="&lt;Super&gt;Down" type="string" value="tile_down_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;q" type="string" value="close_window_key"/>
+      <property name="&lt;Super&gt;f" type="string" value="fullscreen_key"/>
     </property>
   </property>
   <property name="providers" type="array">

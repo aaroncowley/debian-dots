@@ -4,7 +4,7 @@
 # Auto installation of preferred debian environment #
 #####################################################
 
-echo $1
+cd ~/debian-dots/
 
 # fresh system stuff
 if [ "$1" == "install" ]; then
