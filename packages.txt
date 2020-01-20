@@ -1,4 +1,3 @@
-arc-theme
 compton
 curl
 feh
@@ -10,6 +9,7 @@ i3
 i3blocks
 neofetch
 network-manager
+pulseaudio-module-bluetooth
 python3-pip
 ranger
 rxvt-unicode-256color
@@ -18,7 +18,14 @@ udiskie
 vim-gtk
 virtualenv
 vlc
+xfce4-terminal
 xinit
 xorg
 xxd
 zsh
+firmware-misc-nonfree
+blueman
+gtk2-engines-murrine
+gtk2-engines-pixbuf
+papirus-icon-theme
+tmux

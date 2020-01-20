@@ -1,15 +1,33 @@
 set nocompatible   	" Disable vi-compatibility
 set t_Co=256        " Use 256 Colors in terminal
-" Put your non-Plugin stuff after this line
-execute pathogen#infect()
+
 " Color Settings
 syntax on
 filetype plugin indent on
 set background=dark
-" set Vim-specific sequences for RGB colors
-colorscheme molokai
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+let g:material_terminal_italics = 1
+let g:material_theme_style='darker'
+colorscheme material
 set encoding=utf8
 
+
+" VIM PLUG """""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/fatih/vim-go.git'
+Plug 'https://github.com/sheerun/vim-polyglot.git'
+Plug 'https://github.com/JamshedVesuna/vim-markdown-preview.git'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'https://github.com/preservim/nerdtree.git'
+Plug 'https://github.com/itchyny/lightline.vim.git'
+call plug#end()
+""""""""""""""""""""""""""""""""""""""
+" Put your non-Plugin stuff after this line
 
 
 let mapleader=','
@@ -30,6 +48,12 @@ set noerrorbells                " don't beep
 set splitbelow                  " create split below when doing horizontal split
 set splitright                  " create split on right when doing a vertical split
 set incsearch
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 "set nowrap
 "set timeout timeoutlen=200 ttimeoutlen=100
 
@@ -63,17 +87,20 @@ nnoremap <leader>pd :pwd<cr>
 "au Filetype clojure nmap <c-c><c-k> :Require<cr>
 """""""""""""""""""""""""""""""""""""""""""""""
 
+let g:lightline = { 'colorscheme': 'material_vim' }
 
-" air-line
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+set laststatus=2
+"" air-line
+"let g:airline_powerline_fonts = 1
+"
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+"
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+"let g:airline_theme = 'papercolor'
 """"""""""""""""""""""""""""""""""
 
 
