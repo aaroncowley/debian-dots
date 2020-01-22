@@ -69,3 +69,18 @@ if [ "$1" == "upload" ]; then
     cd ./.vim/plugged/
     rm -rf *
 fi
+
+if [ $1 == "vimup" ]; then
+    cp -R ~/.vim .
+    cp ~/.vimrc .
+    cd ./.vim/plugged/
+    rm -rf *
+elif [ $1 == "vimdown" ]; then
+    cp -R .vim/ ~
+    cp .vimrc ~
+    vim -c "PlugInstall | q | q"
+    cd ~
+fi
+
+echo "Done"
+exit 0
