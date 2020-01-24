@@ -8,7 +8,7 @@ cd ~/debian-dots/
 
 # fresh system stuff
 if [ "$1" == "install" ]; then
-    cat packages.txt | sudo apt install -y
+    cat packages.txt | xargs sudo apt install -y
     
     git clone https://github.com/vinceliuice/Mojave-gtk-theme.git mojave
     cd mojave
